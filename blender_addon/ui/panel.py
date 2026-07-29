@@ -47,7 +47,7 @@ class SU2BLEND_PT_main_panel(bpy.types.Panel):
 
         # Import
         box.operator(
-            "su2blend.import_now",
+            "su2blend.import_bridge",
             text="Import",
             icon='IMPORT'
         )
