@@ -1,31 +1,28 @@
 import logging
 
-from .constants import LOGGER_NAME
+LOGGER_NAME = "SU2Blend"
 
 
-_logger = logging.getLogger(LOGGER_NAME)
+def create_logger():
 
+    logger = logging.getLogger(LOGGER_NAME)
 
-def setup_logger():
+    if logger.handlers:
+        return logger
 
-    if _logger.handlers:
-        return _logger
-
-    _logger.setLevel(logging.INFO)
+    logger.setLevel(logging.INFO)
 
     handler = logging.StreamHandler()
 
     formatter = logging.Formatter(
-
         "[%(levelname)s] %(message)s"
-
     )
 
     handler.setFormatter(formatter)
 
-    _logger.addHandler(handler)
+    logger.addHandler(handler)
 
-    return _logger
+    return logger
 
 
-log = setup_logger()
+log = create_logger()

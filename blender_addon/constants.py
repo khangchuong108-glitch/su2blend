@@ -1,16 +1,18 @@
 """
-SU2Blend Constants
+SU2Blend constants
 """
 
 ADDON_NAME = "SU2Blend"
 ADDON_VERSION = (0, 1, 0)
 
+BLENDER_MIN_VERSION = (5, 2, 0)
+
 PANEL_CATEGORY = "SU2Blend"
 
-LOGGER_NAME = "SU2Blend"
-
-DEFAULT_BRIDGE_FOLDER = ""
-
 DEFAULT_COLLECTION = "SU2Blend"
+
+DEFAULT_EXPORT_NAME = "scene.glb"
+
+DEFAULT_METADATA_NAME = "scene.json"
 
 CONFIG_FILENAME = "su2blend.json"

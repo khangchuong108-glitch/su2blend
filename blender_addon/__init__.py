@@ -1,57 +1,31 @@
 bl_info = {
-    "name": "SketchBridge",
+    "name": "SU2Blend",
     "author": "Chuong + OpenAI",
     "version": (0, 1, 0),
-    "blender": (4, 2, 0),
-    "location": "View3D",
-    "description": "SketchUp Bridge",
+    "blender": (5, 2, 0),
+    "location": "View3D > Sidebar",
+    "description": "SketchUp to Blender Bridge",
     "category": "Import-Export",
 }
 
-import bpy
-
 from .logger import log
-
-
-class SKETCHBRIDGE_OT_Test(
-    bpy.types.Operator
-):
-
-    bl_idname = "sketchbridge.test"
-
-    bl_label = "Test Bridge"
-
-    def execute(
-        self,
-        context
-    ):
-
-        log("Bridge Loaded Successfully")
-
-        self.report(
-            {'INFO'},
-            "SketchBridge OK"
-        )
-
-        return {'FINISHED'}
-
-
-classes = (
-    SKETCHBRIDGE_OT_Test,
-)
+from .operators import register as register_operators
+from .operators import unregister as unregister_operators
+from .ui import register as register_ui
+from .ui import unregister as unregister_ui
 
 
 def register():
 
-    for cls in classes:
-        bpy.utils.register_class(cls)
+    register_operators()
+    register_ui()
 
-    log("Addon Registered")
+    log.info("SU2Blend Loaded")
 
 
 def unregister():
 
-    for cls in reversed(classes):
-        bpy.utils.unregister_class(cls)
+    unregister_ui()
+    unregister_operators()
 
-    log("Addon Unregistered")
+    log.info("SU2Blend Unloaded")

@@ -3,18 +3,22 @@ from pathlib import Path
 from .constants import CONFIG_FILENAME
 
 
-class Config:
+class ConfigManager:
 
     def __init__(self):
 
-        self.root = Path.home()
+        self.project_folder = Path.home()
 
         self.bridge_folder = ""
+
+        self.auto_import = True
+
+        self.auto_clean = False
 
     @property
     def config_path(self):
 
-        return self.root / CONFIG_FILENAME
+        return self.project_folder / CONFIG_FILENAME
 
 
-config = Config()
+config = ConfigManager()
