@@ -1,18 +1,5 @@
-"""
-SU2Blend constants
-"""
+BRIDGE_NAME = "SU2Bridge"
 
-ADDON_NAME = "SU2Blend"
-ADDON_VERSION = (0, 1, 0)
+DEFAULT_BRIDGE_FOLDER = "~/Documents/SU2Bridge"
 
-BLENDER_MIN_VERSION = (5, 2, 0)
-
-PANEL_CATEGORY = "SU2Blend"
-
-DEFAULT_COLLECTION = "SU2Blend"
-
-DEFAULT_EXPORT_NAME = "scene.glb"
-
-DEFAULT_METADATA_NAME = "scene.json"
-
-CONFIG_FILENAME = "su2blend.json"
+BRIDGE_VERSION = 1

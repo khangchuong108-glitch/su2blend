@@ -17,14 +17,51 @@ class SU2BLEND_PT_main_panel(bpy.types.Panel):
 
         box = layout.box()
 
-        box.label(text="SketchUp Bridge")
+        # Title
+        box.label(text="SketchUp Bridge", icon='HOME')
 
+        box.separator()
+
+        # Bridge Status
+        box.label(
+            text="Bridge Status : Disconnected",
+            icon='ERROR'
+        )
+
+        # Bridge Folder
+        box.label(
+            text="Folder : Not Selected",
+            icon='FILE_FOLDER'
+        )
+
+        box.separator()
+
+        # Connect
+        box.operator(
+            "su2blend.connect_bridge",
+            text="Connect",
+            icon='LINKED'
+        )
+
+        box.separator()
+
+        # Import
         box.operator(
             "su2blend.import_now",
+            text="Import",
             icon='IMPORT'
         )
 
+        # Reload
+        box.operator(
+            "su2blend.reload_bridge",
+            text="Reload",
+            icon='FILE_REFRESH'
+        )
+
+        # Clean
         box.operator(
             "su2blend.clean_scene",
+            text="Clean",
             icon='TRASH'
         )
