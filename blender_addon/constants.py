@@ -1,0 +1,16 @@
+"""
+SU2Blend Constants
+"""
+
+ADDON_NAME = "SU2Blend"
+ADDON_VERSION = (0, 1, 0)
+
+PANEL_CATEGORY = "SU2Blend"
+
+LOGGER_NAME = "SU2Blend"
+
+DEFAULT_BRIDGE_FOLDER = ""
+
+DEFAULT_COLLECTION = "SU2Blend"
+
+CONFIG_FILENAME = "su2blend.json"
